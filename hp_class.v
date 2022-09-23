@@ -24,7 +24,7 @@ assign subnormal = ~sigzeros & expzeros;  			//2046 posssible encodings
 assign normal = ~(expones & expzeros); 				//61440 posssible encodings
 assign inf = expones & sigzeros;					//2 posssible encodings
 
-//excusive statements to accout for subnormal * normal multiplication
+//exclusive statements to accout for subnormal * normal multiplication
 always @(*) begin
 	fExp = f[14:10];
 	fSig = {1'b1 , f[9:0]};
